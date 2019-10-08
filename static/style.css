@@ -1,0 +1,51 @@
+h1 {
+  font-size: 20px;
+  font-family: Times, "Times New Roman", serif;
+  font-weight: normal;
+  clear: both;
+}
+
+a {
+  text-decoration: none;
+  color: #d2738a;
+}
+
+.article {
+  width: 70%;
+  text-align: center;
+  box-shadow: black 0px 5px 10px;
+  background-color: black;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: 6px;
+  font-size: 13px;
+  padding: 20px 0;
+}
+
+#head {
+  margin-top: 60px;
+}
+
+#head > a{
+  letter-spacing: 0;
+}
+
+.gif-article {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+#gf1{
+  background-image: url(static/img/gf1.gif);
+  width: 305px;
+  height: 354px;
+  margin-top: 100px;
+}
+
+body {
+  background-image: url(static/img/bg.gif); 
+  color: #c1b492;
+}
