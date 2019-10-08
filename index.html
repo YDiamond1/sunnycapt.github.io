@@ -17,7 +17,7 @@
       var audio=new Audio('/static/sound/' + v);
       audio.loop=true;
       audio.autoplay=true;
-      audio.play();
+      audio.play().catch(err=>consoole.log(err));
     });
   </script>
 </body>
