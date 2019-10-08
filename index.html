@@ -12,11 +12,13 @@
   </div>
   <div class="gif-article" id="gf1">
   </div>
-  <audio autoplay="" loop="">
-    <source src="/static/sound/psx.wav" type="audio/wav">
-  </audio>
-  <audio autoplay="" loop="">
-    <source src="/static/sound/boon.wav" type="audio/wav">
-  </audio>
+  <script type="text/javascript">
+    Array('psx.wav', 'boon.wav').forEach(v=>{
+      var audio=new Audio('/static/sound/' + v);
+      audio.loop=true;
+      audio.autoplay=true;
+      audio.play();
+    });
+  </script>
 </body>
 </html>
