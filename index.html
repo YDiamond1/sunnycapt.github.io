@@ -13,6 +13,7 @@
   <div class="gif-article" id="gf1">
   </div>
   <script type="text/javascript">
+    var is_repeat = false; 
     function runSounds(){
       Array('psx.wav', 'boon.wav').forEach(v=>{
         var audio=new Audio('/static/sound/' + v);
@@ -20,8 +21,10 @@
         audio.autoplay=true;
         audio.play().catch(err=>{
           console.log(err.message);
-          setTimeout(5000, runSounds());
+          if (!is_repeat)
+            setTimeout(5000, runSounds());
         });
+        is_repeat = true
       });
     }
     runSounds();
