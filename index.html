@@ -21,7 +21,7 @@
         audio.play().catch(err=>console.log(err.message));
       });
     }
-    document.body.onlaod = setTimeout(500, ()=>runSounds());
+    document.body.onlaod = ()=>setTimeout(500, runSounds);
   </script>
 </body>
 </html>
