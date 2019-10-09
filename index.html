@@ -21,7 +21,7 @@
         audio.play().catch(err=>console.log(err.message));
       });
     }
-    document.body.addEventListener('onload', runSounds)
+    document.body.onmouseover = runSounds;
   </script>
 </body>
 </html>
