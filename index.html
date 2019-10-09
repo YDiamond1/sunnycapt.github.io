@@ -21,7 +21,7 @@
         audio.play().catch(err=>console.log(err.message));
       });
     }
-    body.addListener('onload', runSounds);
+    document.body.addEventListener('onload', runSounds)
   </script>
 </body>
 </html>
