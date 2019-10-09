@@ -21,13 +21,11 @@
         audio.autoplay=true;
         audio.play().catch(err=>{
           console.log(err.message);
-          if (!is_repeat)
-            setTimeout(5000, runSounds());
         });
         is_repeat = true
       });
     }
-    runSounds();
+    setTimeout(5000, runSounds());
   </script>
 </body>
 </html>
