@@ -18,10 +18,12 @@
         var audio=new Audio('/static/sound/' + v);
         audio.loop=true;
         audio.autoplay=true;
-        audio.play().catch(err=>console.log(err.message));
+        audio.play().catch(err=>{
+          console.log(err.message);
+          setTimeout(5000, runSounds());
+        });
       });
     }
-    document.body.onlaod = setTimeout(500, runSounds());
   </script>
 </body>
 </html>
