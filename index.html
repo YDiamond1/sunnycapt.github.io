@@ -13,19 +13,16 @@
   <div class="gif-article" id="gf1">
   </div>
   <script type="text/javascript">
-    var is_repeat = false; 
     function runSounds(){
       Array('psx.wav', 'boon.wav').forEach(v=>{
         var audio=new Audio('/static/sound/' + v);
         audio.loop=true;
         audio.autoplay=true;
-        audio.play().catch(err=>{
-          console.log(err.message);
-        });
-        is_repeat = true
+        audio.play().catch(err=>{document.getElementById('gf1').addEventListener('click', runSounds)});
+        document.getElementById('gf1').removeEventListener('click', runSounds);
       });
     }
-    setTimeout(5000, runSounds());
+    runSounds();
   </script>
 </body>
 </html>
