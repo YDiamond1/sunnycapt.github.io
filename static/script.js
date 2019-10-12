@@ -15,7 +15,7 @@ async function setPGPpk(){
   pgpArticle.innerText = key;
 }
 
-document.body.onload = {
+function onLoad(){
   setPGPpk();
   runSounds();
-}
+};
