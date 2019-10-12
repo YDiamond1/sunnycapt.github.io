@@ -3,6 +3,7 @@ h1 {
   font-family: Times, "Times New Roman", serif;
   font-weight: normal;
   clear: both;
+  padding: 0 5px;
 }
 
 a {
@@ -49,6 +50,7 @@ a {
 body {
   background-image: url(img/bg.gif); 
   color: #c1b492;
+  word-wrap: break-word;
 }
 
 #PGP {
