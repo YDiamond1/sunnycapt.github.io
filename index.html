@@ -9,21 +9,13 @@
   <div class="article" id="head">
     <h1>repositories: <a target="blank" href="//github.com/SunnyCapt">@SunnyCapt</a></h1>	  
     <h1>telegram: <a target="blank" href="//tlg.wtf/lambda_function">@lambda_function</a></h1>
-    <h1>PGP: <a target="blank" href="static/public_key.asc.txt">public_key</a></h1>
+    <h1>PGP: <a href="#PGP">public_key</a></h1>
   </div>
   <div class="gif-article" id="gf1">
   </div>
-  <script type="text/javascript">
-    function runSounds(){
-      Array('psx.wav', 'boon.wav').forEach(v=>{
-	        var audio=new Audio('/static/sound/' + v);
-	        audio.loop=true;
-        	audio.autoplay=true;
-	        audio.play().catch(err=>{document.getElementById('gf1').addEventListener('click', runSounds)});
-        	document.getElementById('gf1').removeEventListener('click', runSounds);
-      });
-    }
-    runSounds();
-  </script>
+  <div class="article">
+    <h1  id="PGP"></h1>
+  </div>
+  <script src="static/script.js"></script>
 </body>
 </html>
