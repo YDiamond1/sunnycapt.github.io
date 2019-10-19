@@ -12,11 +12,12 @@ a {
 }
 
 .article {
-  width: 70%;
   text-align: center;
-  box-shadow: black 0px 5px 10px;
-  background-color: black;
   height: auto;
+}
+
+.block {
+  width: 70%;
   margin-top: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -25,8 +26,18 @@ a {
   padding: 20px 0;
 }
 
+
+.blacked {
+  box-shadow: black 0px 5px 10px;
+  background-color: black;
+}
+
 #head {
-  margin-top: 60px;
+  margin-top: 40px;
+}
+
+#bottom {
+  margin-bottom: 40px;
 }
 
 #head > a{
@@ -47,13 +58,43 @@ a {
   margin-top: 100px;
 }
 
+#PGP {
+  letter-spacing: 0;
+  font-size: 18px;
+}
+
 body {
   background-image: url(img/bg.gif); 
   color: #c1b492;
   word-wrap: break-word;
 }
 
-#PGP {
-  letter-spacing: 0;
+.repo {
+  float: left;
+  width: 180px;
+  height: 230px;
   font-size: 18px;
+  margin: 0 15px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.repo > .link {
+  margin: 20px 0;
+  padding: 0 8px;
+}
+
+.repo > .details {
+  padding: 0 8px;
+  padding-top: 40%;
+}
+
+#projects {
+  letter-spacing: 2px;
 }
