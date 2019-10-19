@@ -18,11 +18,14 @@ async function setPGPpk(){
 function showRepo(jsonRepo){
   let tmp = document.createElement('div');
   tmp.classList.add('blacked', 'repo');
+  var description = '';
+  if (jsonRepo.description !== null)
+    description = jsonRepo.description.substring(0,40) + (jsonRepo.description.length>40?'...':'');
   tmp.innerHTML = '<div class="link">' + 
                     `<a href="${jsonRepo.html_url}">${jsonRepo.name}</a>` +
                   '</div>' +
                   '<div class="details">' +
-                    jsonRepo.description
+                    description
                   '</div>';
   document.getElementById('projects').append(tmp);
 }
