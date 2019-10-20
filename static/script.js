@@ -22,7 +22,7 @@ function showRepo(jsonRepo){
   if (jsonRepo.description !== null)
     description = jsonRepo.description.substring(0,40) + (jsonRepo.description.length>40?'...':'');
   tmp.innerHTML = '<div class="link">' + 
-                    `<a href="${jsonRepo.html_url}">${jsonRepo.name}</a>` +
+                    `<a target="blank" href="${jsonRepo.html_url}">${jsonRepo.name}</a>` +
                   '</div>' +
                   '<div class="details">' +
                     description
