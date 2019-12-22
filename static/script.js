@@ -8,13 +8,6 @@ function runSounds(){
   });
 }
 
-async function setPGPpk(){
-  let pgpArticle = document.getElementById('PGP')
-  let response = await fetch('static/public_key.asc');
-  let key = await response.text();
-  pgpArticle.innerText = key;
-}
-
 function showRepo(jsonRepo){
   let tmp = document.createElement('div');
   tmp.classList.add('blacked', 'repo');
@@ -37,7 +30,6 @@ async function setRepos(userName){
 }
 
 function onLoad(){
-  setPGPpk();
   setRepos('SunnyCapt');
   runSounds();
 };
