@@ -8,14 +8,16 @@ function runSounds(){
   });
 }
 
-function showRepo(jsonRepo){
+async function showRepo(jsonRepo){
   let tmp = document.createElement('div');
   tmp.classList.add('blacked', 'repo');
   var description = '';
   if (jsonRepo.description !== null)
     description = jsonRepo.description.substring(0,40) + (jsonRepo.description.length>40?'...':'');
+  let resp = await fetch(jsonRepo.name);
+  let haveGithubPage = resp.ok;	
   tmp.innerHTML = '<div class="link">' + 
-                    `<a target="blank" href="${jsonRepo.html_url}">${jsonRepo.name}</a>` +
+                    `<a target="blank" href="${haveGithubPage?jsonRepo.name:jsonRepo.html_url}">${jsonRepo.name}</a>` +
                   '</div>' +
                   '<div class="details">' +
                     description
@@ -26,7 +28,7 @@ function showRepo(jsonRepo){
 async function setRepos(userName){
   let response = await fetch(`//api.github.com/users/${userName}/repos`);
   let jsonRepos = await response.json();
-  jsonRepos.forEach(jsonRepo=>showRepo(jsonRepo));
+  jsonRepos.forEach((jsonRepo)=>await showRepo(jsonRepo));
 }
 
 function onLoad(){
