@@ -28,7 +28,7 @@ async function showRepo(jsonRepo){
 async function setRepos(userName){
   let response = await fetch(`//api.github.com/users/${userName}/repos`);
   let jsonRepos = await response.json();
-  jsonRepos.forEach((jsonRepo)=>await showRepo(jsonRepo));
+  jsonRepos.forEach(showRepo);
 }
 
 function onLoad(){
