@@ -12,12 +12,17 @@ async function showRepo(jsonRepo){
   let tmp = document.createElement('div');
   tmp.classList.add('blacked', 'repo');
   var description = '';
-  if (jsonRepo.description !== null)
-    description = jsonRepo.description.substring(0,40) + (jsonRepo.description.length>40?'...':'');
+  var name = jsonRepo.name;	
+  if (jsonRepo.name.length > 30)
+    name = name.substring(0, 30);
+  if (jsonRepo.description !== null) {
+    var descriptionLength = 56 - name.length;
+    description = jsonRepo.description.substring(0, descriptionLength) + (jsonRepo.description.length>descriptionLength?'...':'');
+  }
   let resp = await fetch(jsonRepo.name);
   let haveGithubPage = resp.ok;	
   tmp.innerHTML = '<div class="link">' + 
-                    `<a target="blank" href="${haveGithubPage?jsonRepo.name:jsonRepo.html_url}">${jsonRepo.name}</a>` +
+                    `<a target="blank" href="${haveGithubPage?jsonRepo.name:jsonRepo.html_url}">${name}</a>` +
                   '</div>' +
                   '<div class="details">' +
                     description
