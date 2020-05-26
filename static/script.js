@@ -16,7 +16,7 @@ async function showRepo(jsonRepo){
   if (jsonRepo.name.length > 30)
     name = name.substring(0, 30);
   if (jsonRepo.description !== null) {
-    var descriptionLength = 56 - name.length;
+    var descriptionLength = 51 - name.length;
     description = jsonRepo.description.substring(0, descriptionLength) + (jsonRepo.description.length>descriptionLength?'...':'');
   }
   let resp = await fetch(jsonRepo.name);
